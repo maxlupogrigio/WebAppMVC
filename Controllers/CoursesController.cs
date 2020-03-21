@@ -11,7 +11,7 @@ namespace WebAppMVC.Controllers
         }
 
 
-        public IActionResult Detail()
+        public IActionResult Detail(int id)
         {
 
             return View();
