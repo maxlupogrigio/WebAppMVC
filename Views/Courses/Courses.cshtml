@@ -1,47 +1,20 @@
-<!DOCTYPE html>
-<html>
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
-<body>
 
 
 @{
-    ViewData["Title"] = "Courses";
+    ViewData["Title"] = "Elenco dei corsi";
 }
+
+<section>
 <h1>@ViewData["Title"]</h1>
+<ul>
+  @for(int i = 1; i <= 10; i++)
+  {
+    <li>Corso - nr.:  @i.ToString("0000") </li>
+  }
+</ul>
 
-<h2>Elenco corsi on-line</h2>
-<p>Clicca sul corso per visualizzare i relativi dettagli</p>
-
-<table >
-<tr>
-    <td>
-        Id Corso
-    </td>
-    <td>
-        Titolo
-    </td>
-    <td>
-        Data
-    </td>
-</tr>
-
-</table>
-
-</body>
-</html>
+</section>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sunt deserunt qui omnis explicabo. Tenetur eligendi nihil consequatur nesciunt sit eaque dolor delectus expedita molestiae, ipsum, 
+  quaerat voluptas consectetur distinctio.</p>
+  
