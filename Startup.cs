@@ -48,6 +48,7 @@ namespace WebAppMVC
 
             app.UseEndpoints(endpoints =>
             {
+                //il punto di domanda rende l'id facolttivo non richiesto
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
