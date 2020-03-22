@@ -1,3 +1,5 @@
+using System.Net;
+using System.IO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +10,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using IApplicationLifetime = Microsoft.AspNetCore.Hosting.IApplicationLifetime;
 
 namespace WebAppMVC
 {
@@ -27,11 +30,18 @@ namespace WebAppMVC
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        [Obsolete]
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,IApplicationLifetime lifetime )
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                lifetime.ApplicationStarted.Register(() =>{
+                    string filePath = Path.Combine(env.ContentRootPath, "bin/reload.txt");
+                    File.WriteAllText(filePath,DateTime.Now.ToString());
+                });
+               
             }
             else
             {
