@@ -10,12 +10,18 @@
 <ul>
   @for(int i = 1; i <= 10; i++)
   {
-    <li>Corso - nr.:  @i.ToString("0000") </li>
+    <li>Corso - nr.:  @i.ToString("0000") <a asp-action="Detail" asp-controller="Courses" asp-route-id=@i>Dettaglio corso </a> </li>
+    
+      
   }
 </ul>
 
 </section>
+
+
 <p>Dettagli</p>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sunt deserunt qui omnis explicabo. Tenetur eligendi nihil consequatur nesciunt sit eaque dolor delectus expedita molestiae, ipsum, 
   quaerat voluptas consectetur distinctio.</p>
+
+  <p>Prova nuovo paragrafo</p>
   
