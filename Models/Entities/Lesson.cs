@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MyCourse.Models.Entities
+namespace WebAppMVC.Models.Entities
 {
     public partial class Lesson
     {

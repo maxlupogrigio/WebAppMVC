@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using WebAppMVC.Models.ValueTypes;
 
-namespace MyCourse.Models.Entities
+namespace WebAppMVC.Models.Entities
 {
     public partial class Course
     {
