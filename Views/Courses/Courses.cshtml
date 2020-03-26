@@ -3,15 +3,30 @@
 
 @{
     ViewData["Title"] = "Catalogo dei Corsi on-line";
-}
+  }
+
+ @Model List<CourseViewModel>
+
+
+
+
 
 <section>
 <h1>@ViewData["Title"]</h1>
 <h2 class="course h2"><em>Corsi disponibili sulla piattaforma: clicca dettaglio per visualizzare tutte le informazioni</em></h2>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-5"><order-link order-by="Title" Input="@Model.Input">Titolo</order-link></div>
+    <div class="col-md-2"><order-link order-by="Rating" Input="@Model.Input">Valutazione</order-link></div>
+    <div class="col-md-2"><order-link order-by="CurrentPrice" Input="@Model.Input">Prezzo</order-link></div>
+    <div class="col-md-2"></div>
+</div>
 
-@for(int i=1;i<11;i++)
+@foreach(CourseViewModel course in Model)
 {
-  <div class="row">
+  <hr>
+ 
+  <div class="row course">
     <div class="col-md-1">
       <img src=@("/imgcourses/" + @i + ".jpg") width="52" height="52">
     </div>
@@ -30,8 +45,8 @@
       EUR 10,99 <br/> <s>EUR 15,00</s>
 
     </div>
-    <div class="col-md-2">
-      <a class="btn btn-primary" asp-action="Detail" asp-route-id=@i>Dettaglio</a>
+    <div class="col-md-2 d-flex align-item-center">
+      <a class="btn btn-primary" asp-action="Detail" asp-route-id="5">Dettaglio</a>
        
     </div>
    
