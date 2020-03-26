@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebAppMVC.Customizations.ModelBinders;
 using WebAppMVC.Models.Options;
 
-namespace MyCourse.Models.InputModels
+namespace WebAppMVC.Models.InputModels
 {
     [ModelBinder(BinderType = typeof(CourseListInputModelBinder))]
     public class CourseListInputModel
